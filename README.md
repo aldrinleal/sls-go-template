@@ -10,7 +10,7 @@
 
 ## Deploying
 
-(requires go and serverless framework):
+(requires make, go and yarn):
 
 ```
 $ go get -v ./...
