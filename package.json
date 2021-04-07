@@ -1,0 +1,11 @@
+{
+  "name": "sls-go-template",
+  "version": "0.0.1",
+  "license": "MIT",
+  "dependencies": {
+    "serverless": "^2.33.1"
+  },
+  "scripts": {
+    "sls": "sls"
+  }
+}
