@@ -215,3 +215,5 @@ bin/
 # direnv / others
 .env*
 
+# serverless-stack-outputs
+stack.*

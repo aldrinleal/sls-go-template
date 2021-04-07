@@ -2,6 +2,8 @@ service: gt
 
 frameworkVersion: '>=2.33.0 <3.0.0'
 
+configValidationMode: error
+
 provider:
   name: aws
   runtime: go1.x
@@ -10,8 +12,13 @@ provider:
   environment:
     # you can define service wide environment variables here
     GIN_MODE: "release"
-    memorySize: 512
-    timeout: 30
+  memorySize: 256
+  timeout: 30
+  lambdaHashingVersion: 20201221
+  httpApi:
+    payload: '1.0'
+  apiGateway:
+    shouldStartNameWithService: true
   # iamRoleStatements:
   #   - Effect: "Allow"
   #     Action:
@@ -20,10 +27,9 @@ provider:
   #     Resource: "*"
 
 package:
-  exclude:
-    - ./**
-  include:
-    - ./bin/**
+  patterns:
+    - '!./**'
+    - './bin/**'
 
 functions:
   service:
